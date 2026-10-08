@@ -1,0 +1,5 @@
+# Relatórios de auditoria de projetos reais ficam só na máquina local:
+# descrevem infraestrutura real (rotas, versões, falhas abertas).
+relatorios/*/
+!relatorios/MODELO.md
+!relatorios/.gitkeep
