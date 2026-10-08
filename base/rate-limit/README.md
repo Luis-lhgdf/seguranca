@@ -10,8 +10,8 @@ proxy, teste de regressão e de carga.
 | Arquivo | Conteúdo |
 |---|---|
 | [camadas-e-cgnat.md](camadas-e-cgnat.md) | incidente, causas, regras, camadas, testes |
-| [referencias.md](referencias.md) | fontes oficiais |
-| [checklist.md](checklist.md) | itens `SEC-RL-*` |
+| [referencias.md](referencias.md) | fontes oficiais e mapeamento Top 10 / ASVS / WSTG |
+| [checklist.md](checklist.md) | itens `SEC-RL-*` (com nível ASVS e mapeamento) |
 
 Limites específicos: login em [autenticacao](../autenticacao/login-e-mfa.md), mensagens em
 [mensageria](../mensageria/README.md), cartão em [pagamentos](../pagamentos/card-testing.md).

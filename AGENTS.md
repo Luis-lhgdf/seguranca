@@ -78,7 +78,10 @@ Registre tudo no bloco "Versões verificadas em AAAA-MM-DD" do relatório.
 
 Leia [`base/fundamentos/README.md`](base/fundamentos/README.md) e decida o nível ASVS-alvo
 ([`base/fundamentos/asvs.md`](base/fundamentos/asvs.md)): L2 como piso; L3 só nos fluxos de
-dinheiro/dado sensível.
+dinheiro/dado sensível. Cada item traz o nível na linha **Mapeamento**
+(tabela completa em [`checklist/mapeamentos.md`](checklist/mapeamentos.md)): itens `L3` são
+obrigatórios nos fluxos marcados como L3 no cenário e recomendados nos demais (não viram `N/A`);
+itens sem nível (servidor, backup, operação) valem sempre que o tema se aplicar.
 
 ## Etapa 4 — Percorrer os checklists em ordem
 

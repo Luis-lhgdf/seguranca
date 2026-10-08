@@ -8,6 +8,7 @@
 - **Como verificar:** em ambiente de teste, `curl -si -X POST $API/<login> -d '<credencial de teste>' | grep -i set-cookie`; ou ler o código que seta o cookie.
 - **OK quando:** `HttpOnly; Secure; SameSite=Lax|Strict` em sessão/refresh; path do refresh estreito.
 - **Referência:** [tokens-e-cookies.md#2-regras-gerais](tokens-e-cookies.md#2-regras-gerais) · ASVS V3.3.1–V3.3.4.
+- **Mapeamento:** nível L1 · Top 10 A07:2025 · ASVS V3.3.1 (L1), V3.3.2 (L2), V3.3.3 (L2), V3.3.4 (L2) · WSTG-SESS-02.
 
 ### SEC-SESS-02 — Nenhum token em localStorage/sessionStorage
 - **Aplica-se quando:** há front com sessão.
@@ -15,6 +16,7 @@
 - **Como verificar:** `grep -rnE "localStorage|sessionStorage" $REPO/<front>` e ler cada uso.
 - **OK quando:** nenhum token nem PII em storage do navegador.
 - **Referência:** [tokens-e-cookies.md#2-regras-gerais](tokens-e-cookies.md#2-regras-gerais) · ASVS V14.3.3.
+- **Mapeamento:** nível L2 · Top 10 A07:2025 · ASVS V14.3.3 (L2) · WSTG-CLNT-12.
 
 ### SEC-SESS-03 — Token aleatório forte, nunca derivado de credencial
 - **Aplica-se quando:** há sessão, código ou identificador secreto.
@@ -22,6 +24,7 @@
 - **Como verificar:** `grep -rnE "import random|random\.|uuid1|Math\.random|Date\.now\(\)" $REPO` nos pontos que geram token/código; ler a geração.
 - **OK quando:** CSPRNG (`secrets`, `crypto.randomBytes`, `uuid4`) com ≥ 128 bits.
 - **Referência:** [tokens-e-cookies.md#2-regras-gerais](tokens-e-cookies.md#2-regras-gerais) · ASVS V7.2.3.
+- **Mapeamento:** nível L1 · Top 10 A07:2025 · ASVS V7.2.3 (L1), V11.5.1 (L2) · WSTG-SESS-01.
 
 ### SEC-SESS-04 — Access curto, sem privilégio no token, algoritmo fixo
 - **Aplica-se quando:** usa JWT.
@@ -29,6 +32,7 @@
 - **Como verificar:** ler emissão (TTL, claims) e decodificação (`algorithms=[...]`, `exp`/`type`).
 - **OK quando:** TTL ≤ ~15 min, sem role no token, algoritmo fixo.
 - **Referência:** [tokens-e-cookies.md#1-padrão-de-referência](tokens-e-cookies.md#1-padrão-de-referência) · ASVS V9.
+- **Mapeamento:** nível L1 · Top 10 A07:2025 · ASVS V9.1.1 (L1), V9.1.2 (L1), V9.2.1 (L1), V9.2.2 (L2) · WSTG-SESS-01 · API2:2023.
 
 ### SEC-SESS-05 — Refresh rotativo, guardado como hash, com detecção de reuso
 - **Aplica-se quando:** há refresh token.
@@ -36,6 +40,7 @@
 - **Como verificar:** ler o serviço; teste local reapresentando refresh antigo → 401 e família revogada.
 - **OK quando:** hash no banco + rotação + revogação da família no reuso.
 - **Referência:** [tokens-e-cookies.md#1-padrão-de-referência](tokens-e-cookies.md#1-padrão-de-referência).
+- **Mapeamento:** nível L1 · Top 10 A07:2025 · ASVS V7.2.4 (L1), V10.4.5 (L1) · WSTG-SESS-01 · API2:2023.
 
 ### SEC-SESS-06 — Logout e troca de senha/privilégio revogam no servidor
 - **Aplica-se quando:** há sessão.
@@ -43,6 +48,7 @@
 - **Como verificar:** em teste, logout → reusar refresh/sessão → 401; trocar senha → sessões antigas → 401.
 - **OK quando:** revogação real; gap do access JWT (até expirar) documentado.
 - **Referência:** [tokens-e-cookies.md#2-regras-gerais](tokens-e-cookies.md#2-regras-gerais).
+- **Mapeamento:** nível L1 · Top 10 A07:2025 · ASVS V7.4.1 (L1), V7.4.3 (L2), V8.3.2 (L3) · WSTG-SESS-06.
 
 ### SEC-SESS-07 — Purga de sessões/tokens agendada
 - **Aplica-se quando:** tokens/sessões ficam em banco.
@@ -50,6 +56,7 @@
 - **Como verificar:** `ssh $VPS 'systemctl list-timers --all; sudo crontab -l; ls /etc/cron.d'`.
 - **OK quando:** job agendado e rodando.
 - **Referência:** [tokens-e-cookies.md#1-padrão-de-referência](tokens-e-cookies.md#1-padrão-de-referência).
+- **Mapeamento:** nível L2 · Top 10 A07:2025 · ASVS V7.3.2 (L2) · WSTG-SESS-07.
 
 ### SEC-SESS-08 — CSRF em toda rota que muda estado
 - **Aplica-se quando:** sessão por cookie.
@@ -57,6 +64,7 @@
 - **Como verificar:** listar routers mutáveis e conferir a dependência CSRF no router; em teste, POST autenticado sem o header → 403.
 - **OK quando:** todo router mutável protegido; exceções escritas no código.
 - **Referência:** [tokens-e-cookies.md#3-csrf](tokens-e-cookies.md#3-csrf) · ASVS V3.5.1–V3.5.3.
+- **Mapeamento:** nível L1 · Top 10 A01:2025 · ASVS V3.5.1 (L1), V3.5.2 (L1), V3.5.3 (L1) · WSTG-SESS-05.
 
 ### SEC-SESS-09 — Ações públicas com efeito colateral conferem a origem
 - **Aplica-se quando:** há POST público (contador, beacon, formulário).
@@ -64,6 +72,7 @@
 - **Como verificar:** `curl -s -o /dev/null -w '%{http_code}' -X POST -H 'Origin: https://evil.example' $API/<rota>` → 403 (rota idempotente/inofensiva; senão, só em teste).
 - **OK quando:** origem estranha recusada + rate limit.
 - **Referência:** [tokens-e-cookies.md#3-csrf](tokens-e-cookies.md#3-csrf).
+- **Mapeamento:** nível L1 · Top 10 A01:2025 · ASVS V3.5.1 (L1) · WSTG-SESS-05.
 
 ### SEC-SESS-10 — Segredo de assinatura forte e distinto por ambiente
 - **Aplica-se quando:** há JWT/cookie assinado.
@@ -71,3 +80,4 @@
 - **Como verificar:** ler o validador de config (placeholder/tamanho); perguntar ao responsável como o segredo de produção foi gerado (não ler o valor).
 - **OK quando:** ≥ 32 chars, gerado no servidor, diferente de dev e do pepper.
 - **Referência:** [tokens-e-cookies.md#2-regras-gerais](tokens-e-cookies.md#2-regras-gerais).
+- **Mapeamento:** nível L2 · Top 10 A04:2025 · ASVS V11.2.3 (L2), V13.3.1 (L2).

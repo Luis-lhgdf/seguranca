@@ -11,5 +11,5 @@
 | [validacao-de-arquivo.md](validacao-de-arquivo.md) | defesas e testes |
 | [metadados-de-imagem.md](metadados-de-imagem.md) | o que vaza, limpeza estrutural × reencode, como verificar |
 | [midia-publica-e-privada.md](midia-publica-e-privada.md) | dois roots, cache, gate de conteúdo, raspagem |
-| [referencias.md](referencias.md) | fontes oficiais |
-| [checklist.md](checklist.md) | itens `SEC-UPL-*` |
+| [referencias.md](referencias.md) | fontes oficiais e mapeamento Top 10 / ASVS / WSTG |
+| [checklist.md](checklist.md) | itens `SEC-UPL-*` (com nível ASVS e mapeamento) |

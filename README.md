@@ -14,6 +14,7 @@ técnicos — organizado como regra + parâmetros + trade-offs, com os links das
 ```
 AGENTS.md            protocolo do agente auditor (CLAUDE.md só importa este arquivo)
 checklist/INDICE.md  ordem dos temas e contagem de itens
+checklist/mapeamentos.md  item SEC-* → Top 10:2025, ASVS 5.0 (nível), WSTG, API Top 10
 base/<tema>/         um tema por pasta:
   README.md            o que cobre, quando se aplica, índice
   <conteudo>.md        arquivos curtos (até ~150-200 linhas)
@@ -22,6 +23,7 @@ base/<tema>/         um tema por pasta:
 relatorios/MODELO.md modelo do relatório
 relatorios/<projeto>/<AAAA-MM-DD>.md   relatórios gerados (locais, fora do Git)
 scripts/verificar-links.py   confere links e âncoras entre os .md
+pesquisa/            estudos de apoio (ex.: repositórios de referência)
 ```
 
 Temas: `fundamentos` (contexto, sem checklist) · `dependencias` · `segredos` · `autenticacao` ·
@@ -42,7 +44,8 @@ descreve infraestrutura real (rotas, versões, falhas abertas) e não deve ir pa
 repositório público. Só `relatorios/MODELO.md` é versionado.
 
 **Humano (consulta):** comece pelo `README.md` do tema; cada um aponta os arquivos de conteúdo e as
-fontes. Para uma visão geral, `base/fundamentos/`.
+fontes. Para uma visão geral, `base/fundamentos/`. Para partir de uma categoria do OWASP Top 10, de um
+requisito do ASVS ou de um teste do WSTG, use [`checklist/mapeamentos.md`](checklist/mapeamentos.md).
 
 ## Como adicionar conhecimento
 
@@ -50,7 +53,7 @@ fontes. Para uma visão geral, `base/fundamentos/`.
 2. Um assunto por arquivo; se passar de ~200 linhas, quebre em dois.
 3. Primeira linha após o título: `> **Revisado em:** AAAA-MM-DD · **Origem:** ...`. Atualize a data a cada revisão.
 4. Generalize: regra primeiro, exemplo genérico depois ("uma loja virtual", "um site institucional"). Mantenha números medidos, parâmetros e links. **Nunca** inclua nome de projeto ou cliente, caminho local, segredo, IP de servidor, domínio privado, e-mail ou dado pessoal.
-5. Toda recomendação acionável vira item no `checklist.md` do tema, no formato do [`checklist/INDICE.md`](checklist/INDICE.md), com o próximo número livre; atualize a contagem no índice.
+5. Toda recomendação acionável vira item no `checklist.md` do tema, no formato do [`checklist/INDICE.md`](checklist/INDICE.md), com o próximo número livre; atualize a contagem no índice e o mapeamento (linha **Mapeamento** e [`checklist/mapeamentos.md`](checklist/mapeamentos.md)), conferindo os IDs na fonte oficial.
 6. Fontes oficiais no `referencias.md` do tema.
 7. Rode `python scripts/verificar-links.py` (precisa dar 0 problemas) e faça commit em português.
 

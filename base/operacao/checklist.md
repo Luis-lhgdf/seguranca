@@ -8,6 +8,7 @@
 - **Como verificar:** procurar documento com contatos, contenção, avaliação, comunicação (ANPD/titulares) e recuperação.
 - **OK quando:** existe, está atualizado e cita o prazo de comunicação.
 - **Referência:** [incidentes-e-pessoas.md#1-plano-de-resposta-a-incidente-runbook](incidentes-e-pessoas.md#1-plano-de-resposta-a-incidente-runbook).
+- **Mapeamento:** Top 10 A09:2025 · sem requisito ASVS direto.
 
 ### SEC-OPS-02 — MFA nas contas externas do perímetro
 - **Aplica-se quando:** sempre.
@@ -15,6 +16,7 @@
 - **Como verificar:** listar as contas da seção 2 que o projeto usa e perguntar o estado de MFA de cada uma.
 - **OK quando:** MFA em todas, com dono definido.
 - **Referência:** [incidentes-e-pessoas.md#2-contas-satélites-fora-do-repositório-mas-no-perímetro](incidentes-e-pessoas.md#2-contas-satélites-fora-do-repositório-mas-no-perímetro).
+- **Mapeamento:** Top 10 A07:2025 · sem requisito ASVS direto.
 
 ### SEC-OPS-03 — Revisão periódica de acessos
 - **Aplica-se quando:** mais de uma pessoa já teve acesso (painel, VPS, GitHub, provedores).
@@ -22,6 +24,7 @@
 - **Como verificar:** comparar listas de usuários (painel, `authorized_keys`, GitHub, provedores) com quem trabalha hoje.
 - **OK quando:** só pessoas atuais, logins nominais.
 - **Referência:** [incidentes-e-pessoas.md#2-contas-satélites-fora-do-repositório-mas-no-perímetro](incidentes-e-pessoas.md#2-contas-satélites-fora-do-repositório-mas-no-perímetro).
+- **Mapeamento:** Top 10 A01:2025 · sem requisito ASVS direto.
 
 ### SEC-OPS-04 — Procedimento contra phishing/BEC
 - **Aplica-se quando:** há pagamentos, dados bancários ou atendimento ao cliente.
@@ -29,6 +32,7 @@
 - **Como verificar:** perguntar se há dupla verificação fora de banda e combinado público do que a empresa não pede.
 - **OK quando:** procedimento definido e comunicado.
 - **Referência:** [incidentes-e-pessoas.md#3-pessoas](incidentes-e-pessoas.md#3-pessoas).
+- **Mapeamento:** Top 10 — · sem requisito ASVS direto.
 
 ### SEC-OPS-05 — Riscos aceitos e decisões registrados
 - **Aplica-se quando:** sempre.
@@ -36,3 +40,4 @@
 - **Como verificar:** procurar registro de decisões/pendências de segurança com data e responsável.
 - **OK quando:** cada desvio consciente está escrito, assinado e com data de reavaliação.
 - **Referência:** [incidentes-e-pessoas.md#4-processo-de-desenvolvimento](incidentes-e-pessoas.md#4-processo-de-desenvolvimento).
+- **Mapeamento:** Top 10 A06:2025 · sem requisito ASVS direto.

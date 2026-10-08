@@ -8,3 +8,9 @@
 - FBI/IC3 — BEC — https://www.ic3.gov/PSA/2024/PSA240911
 - CISA — MFA — https://www.cisa.gov/MFA · phishing — https://www.cisa.gov/topics/cyber-threats-and-advisories/phishing
 - GitHub — exigir 2FA na organização — https://docs.github.com/organizations/keeping-your-organization-secure/managing-two-factor-authentication-for-your-organization
+
+## Mapeamento oficial
+
+Tabela item a item em [checklist/mapeamentos.md](../../checklist/mapeamentos.md#18-operação-incidentes-pessoas-sec-ops).
+
+- OWASP Top 10:2025 — [A01 Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/) · [A06 Insecure Design](https://owasp.org/Top10/2025/A06_2025-Insecure_Design/) · [A07 Authentication Failures](https://owasp.org/Top10/2025/A07_2025-Authentication_Failures/) · [A09 Security Logging and Alerting Failures](https://owasp.org/Top10/2025/A09_2025-Security_Logging_and_Alerting_Failures/)

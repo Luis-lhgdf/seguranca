@@ -8,5 +8,5 @@
 | Arquivo | Conteúdo |
 |---|---|
 | [tokens-e-cookies.md](tokens-e-cookies.md) | padrão de referência, regras gerais, CSRF |
-| [referencias.md](referencias.md) | fontes oficiais |
-| [checklist.md](checklist.md) | itens `SEC-SESS-*` |
+| [referencias.md](referencias.md) | fontes oficiais e mapeamento Top 10 / ASVS / WSTG |
+| [checklist.md](checklist.md) | itens `SEC-SESS-*` (com nível ASVS e mapeamento) |

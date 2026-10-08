@@ -24,3 +24,12 @@
 - Microsoft Defender Safe Links — https://learn.microsoft.com/en-us/defender-office-365/safe-links-about
 - Anatel — Ato 12.712/2024 — https://informacoes.anatel.gov.br/legislacao/component/content/article/154-atos-de-numera%C3%A7%C3%A3o/2140-ato-12712
 - Baymard — https://baymard.com/lists/cart-abandonment-rate · NN/g — https://www.nngroup.com/articles/checklist-registration-login/
+
+## Mapeamento oficial
+
+Tabela item a item em [checklist/mapeamentos.md](../../checklist/mapeamentos.md#3-autenticação-cadastro-recuperação-sec-auth).
+
+- OWASP Top 10:2025 — [A01 Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/) · [A02 Security Misconfiguration](https://owasp.org/Top10/2025/A02_2025-Security_Misconfiguration/) · [A04 Cryptographic Failures](https://owasp.org/Top10/2025/A04_2025-Cryptographic_Failures/) · [A06 Insecure Design](https://owasp.org/Top10/2025/A06_2025-Insecure_Design/) · [A07 Authentication Failures](https://owasp.org/Top10/2025/A07_2025-Authentication_Failures/)
+- OWASP ASVS 5.0 — V2 Validation and Business Logic · V3 Web Frontend Security · V6 Authentication · V7 Session Management · V8 Authorization · V10 OAuth and OIDC · V11 Cryptography · V13 Configuration · V14 Data Protection · V15 Secure Coding and Architecture — https://github.com/OWASP/ASVS/tree/v5.0.0/5.0/en
+- OWASP WSTG v4.2 — [CONF Configuração e implantação](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/) · [IDNT Gestão de identidade](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/03-Identity_Management_Testing/) · [ATHN Autenticação](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/04-Authentication_Testing/) · [BUSL Lógica de negócio](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/10-Business_Logic_Testing/)
+- OWASP API Security Top 10:2023 — API4 Unrestricted Resource Consumption · API6 Unrestricted Access to Sensitive Business Flows — https://owasp.org/API-Security/editions/2023/en/0x11-t10/

@@ -8,6 +8,7 @@
 - **Como verificar:** listar rotas públicas de escrita e classificar (humano × beacon); procurar a decisão escrita.
 - **OK quando:** captcha em toda rota humana com custo de abuso, ou N/A justificado com gatilhos de reavaliação.
 - **Referência:** [captcha-turnstile.md#1-precisa-de-captcha-decisão](captcha-turnstile.md#1-precisa-de-captcha-decisão).
+- **Mapeamento:** nível L1 · Top 10 A06:2025 · ASVS V2.4.1 (L2), V6.1.1 (L1).
 
 ### SEC-CAP-02 — Token validado no backend
 - **Aplica-se quando:** há captcha.
@@ -15,6 +16,7 @@
 - **Como verificar:** `grep -rn "siteverify" $REPO`; em teste, POST sem token → 422.
 - **OK quando:** `siteverify` chamado antes do trabalho caro, com `max_length` no token.
 - **Referência:** [captcha-turnstile.md#3-fluxo-e-ordem](captcha-turnstile.md#3-fluxo-e-ordem).
+- **Mapeamento:** nível L1 · Top 10 A06:2025 · ASVS V2.2.2 (L1), V2.4.1 (L2) · WSTG-BUSL-07.
 
 ### SEC-CAP-03 — Produção recusa chave de teste
 - **Aplica-se quando:** Turnstile.
@@ -22,6 +24,7 @@
 - **Como verificar:** procurar guard de `result_with_testing_key` e validação de config na subida.
 - **OK quando:** os dois existem.
 - **Referência:** [captcha-turnstile.md#4-achados-medidos-contra-a-api-real-valem-para-qualquer-projeto](captcha-turnstile.md#4-achados-medidos-contra-a-api-real-valem-para-qualquer-projeto).
+- **Mapeamento:** nível L2 · Top 10 A02:2025 · ASVS V13.2.3 (L2).
 
 ### SEC-CAP-04 — HTTP 400, hostname e action tratados
 - **Aplica-se quando:** Turnstile.
@@ -29,6 +32,7 @@
 - **Como verificar:** ler o cliente do `siteverify`: status antes do JSON; `hostname` contra lista do ambiente; `action` = rota.
 - **OK quando:** os três conferidos.
 - **Referência:** [captcha-turnstile.md#4-achados-medidos-contra-a-api-real-valem-para-qualquer-projeto](captcha-turnstile.md#4-achados-medidos-contra-a-api-real-valem-para-qualquer-projeto).
+- **Mapeamento:** nível L2 · Top 10 A06:2025 · ASVS V2.4.1 (L2).
 
 ### SEC-CAP-05 — Token renovado após toda tentativa
 - **Aplica-se quando:** formulário com captcha que pode falhar por outro motivo (senha errada).
@@ -36,6 +40,7 @@
 - **Como verificar:** procurar `reset()`/renovação no `finally` do envio.
 - **OK quando:** renova sempre; existe botão "Tentar de novo".
 - **Referência:** [captcha-turnstile.md#4-achados-medidos-contra-a-api-real-valem-para-qualquer-projeto](captcha-turnstile.md#4-achados-medidos-contra-a-api-real-valem-para-qualquer-projeto).
+- **Mapeamento:** nível L2 · Top 10 A06:2025 · ASVS V2.4.1 (L2).
 
 ### SEC-CAP-06 — Comportamento na falha do provedor decidido por rota
 - **Aplica-se quando:** há captcha.
@@ -43,6 +48,7 @@
 - **Como verificar:** ler o tratamento de timeout/erro por rota; procurar teste com mock fora do ar.
 - **OK quando:** cadastro/OTP recusam, login passa com limite apertado, contador + alerta em toda falha.
 - **Referência:** [captcha-turnstile.md#6-quando-o-siteverify-falhar-fail-open--fail-closed](captcha-turnstile.md#6-quando-o-siteverify-falhar-fail-open--fail-closed).
+- **Mapeamento:** nível L2 · Top 10 A10:2025 · ASVS V16.5.2 (L2), V16.5.3 (L2).
 
 ### SEC-CAP-07 — Widget por ambiente e secret só no servidor
 - **Aplica-se quando:** Turnstile.
@@ -50,6 +56,7 @@
 - **Como verificar:** ler config (hostnames de produção sem `localhost`); grep do secret no front.
 - **OK quando:** widgets separados; secret só no backend.
 - **Referência:** [captcha-turnstile.md#5-configuração](captcha-turnstile.md#5-configuração).
+- **Mapeamento:** nível L2 · Top 10 A02:2025 · ASVS V13.3.1 (L2), V13.3.2 (L2).
 
 ### SEC-CAP-08 — Captcha não substitui rate limit
 - **Aplica-se quando:** há captcha.
@@ -57,3 +64,4 @@
 - **Como verificar:** as mesmas rotas têm rate limit por IP e identidade?
 - **OK quando:** os dois juntos.
 - **Referência:** [captcha-turnstile.md#1-precisa-de-captcha-decisão](captcha-turnstile.md#1-precisa-de-captcha-decisão).
+- **Mapeamento:** nível L1 · Top 10 A06:2025 · ASVS V2.4.1 (L2), V6.3.1 (L1) · WSTG-BUSL-07 · API6:2023.

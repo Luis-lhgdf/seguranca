@@ -12,7 +12,7 @@ se houver saúde/financeiro/biométrico etc.
 |---|---|
 | [classificacao-e-retencao.md](classificacao-e-retencao.md) | níveis, minimização, retenção, titular |
 | [cookies-e-terceiros.md](cookies-e-terceiros.md) | consentimento, terceiros, storage, conteúdo público |
-| [referencias.md](referencias.md) | fontes oficiais |
-| [checklist.md](checklist.md) | itens `SEC-LGPD-*` |
+| [referencias.md](referencias.md) | fontes oficiais e mapeamento Top 10 / ASVS / WSTG |
+| [checklist.md](checklist.md) | itens `SEC-LGPD-*` (com nível ASVS e mapeamento) |
 
 Incidente e comunicação à ANPD: [operacao](../operacao/README.md).

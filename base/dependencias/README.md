@@ -12,8 +12,8 @@ por ecossistema (npm, Python/uv, apt, Docker, Actions), gate de CI, SAST, supply
 | [inventario-e-decisao.md](inventario-e-decisao.md) | o que inventariar, onde checar, matriz de decisão, prazos |
 | [por-ecossistema.md](por-ecossistema.md) | comandos de leitura por ecossistema |
 | [ci-e-supply-chain.md](ci-e-supply-chain.md) | gate, Dependabot, lockfile, build, SBOM, DAST |
-| [referencias.md](referencias.md) | fontes oficiais |
-| [checklist.md](checklist.md) | itens `SEC-DEP-*` |
+| [referencias.md](referencias.md) | fontes oficiais e mapeamento Top 10 / ASVS / WSTG |
+| [checklist.md](checklist.md) | itens `SEC-DEP-*` (com nível ASVS e mapeamento) |
 
 ⚠️ Este é o tema que mais envelhece. O agente **não confia** na base nem na própria memória para
 dizer qual é a versão atual: pesquisa na fonte oficial e cita link + data.

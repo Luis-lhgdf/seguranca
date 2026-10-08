@@ -11,7 +11,7 @@ gerenciado, resiliência de conexão.
 |---|---|
 | [consultas-e-transacoes.md](consultas-e-transacoes.md) | SQLi, TOCTOU, idempotência, tipos |
 | [acesso-e-privilegios.md](acesso-e-privilegios.md) | rede, GRANTs, nuvem, reconexão |
-| [referencias.md](referencias.md) | fontes oficiais |
-| [checklist.md](checklist.md) | itens `SEC-BD-*` |
+| [referencias.md](referencias.md) | fontes oficiais e mapeamento Top 10 / ASVS / WSTG |
+| [checklist.md](checklist.md) | itens `SEC-BD-*` (com nível ASVS e mapeamento) |
 
 Backup: [copias-de-seguranca](../copias-de-seguranca/README.md). Dado sensível/retenção: [privacidade](../privacidade/README.md).

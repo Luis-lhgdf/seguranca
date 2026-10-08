@@ -13,5 +13,5 @@ fora do sistema) — registrar o motivo.
 | [checkout-e-webhook.md](checkout-e-webhook.md) | PCI, valor, webhook, estados, comunicação |
 | [card-testing.md](card-testing.md) | ataque, defesas, degraus por pedido/conta/IP |
 | [portal-do-gateway.md](portal-do-gateway.md) | BEC, Pix × cartão, configuração do portal |
-| [referencias.md](referencias.md) | fontes oficiais |
-| [checklist.md](checklist.md) | itens `SEC-PAG-*` |
+| [referencias.md](referencias.md) | fontes oficiais e mapeamento Top 10 / ASVS / WSTG |
+| [checklist.md](checklist.md) | itens `SEC-PAG-*` (com nível ASVS e mapeamento) |

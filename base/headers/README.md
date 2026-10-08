@@ -11,7 +11,7 @@
 | [cabecalhos-de-seguranca.md](cabecalhos-de-seguranca.md) | conjunto mínimo, `no-store`, Nginx, como verificar |
 | [csp.md](csp.md) | implantação Report-Only → enforcing, nonce, diretivas, SRI |
 | [xss-e-escape.md](xss-e-escape.md) | escape por destino, caso JSON-LD, sinks |
-| [referencias.md](referencias.md) | fontes oficiais |
-| [checklist.md](checklist.md) | itens `SEC-NAV-*` |
+| [referencias.md](referencias.md) | fontes oficiais e mapeamento Top 10 / ASVS / WSTG |
+| [checklist.md](checklist.md) | itens `SEC-NAV-*` (com nível ASVS e mapeamento) |
 
 Cookies e CSRF: [sessao](../sessao/README.md). TLS: [nginx-tls](../nginx-tls/README.md).

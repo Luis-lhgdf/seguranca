@@ -11,5 +11,5 @@ detecção de ataque, painéis.
 |---|---|
 | [trilha-de-auditoria.md](trilha-de-auditoria.md) | eventos, forma, o que não logar, retenção |
 | [monitoramento-e-alerta.md](monitoramento-e-alerta.md) | sinais, detecção, painéis, resposta |
-| [referencias.md](referencias.md) | fontes oficiais |
-| [checklist.md](checklist.md) | itens `SEC-LOG-*` |
+| [referencias.md](referencias.md) | fontes oficiais e mapeamento Top 10 / ASVS / WSTG |
+| [checklist.md](checklist.md) | itens `SEC-LOG-*` (com nível ASVS e mapeamento) |

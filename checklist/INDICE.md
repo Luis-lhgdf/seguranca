@@ -1,7 +1,10 @@
 # Índice dos checklists (ordem de execução)
 
-> **Revisado em:** 2026-10-07. Cada tema tem o seu `checklist.md` dentro de `base/<tema>/`.
+> **Revisado em:** 2026-10-08. Cada tema tem o seu `checklist.md` dentro de `base/<tema>/`.
 > O agente percorre na ordem abaixo, depois das etapas 1 a 3 do [`AGENTS.md`](../AGENTS.md).
+
+Referências cruzadas de cada item (OWASP Top 10:2025, ASVS 5.0 com nível L1/L2/L3, WSTG v4.2 e
+API Security Top 10:2023) e índices reversos: [`mapeamentos.md`](mapeamentos.md).
 
 | # | Tema | Prefixo | Itens | Aplica-se quando (resumo) | Checklist |
 |---|---|---|---|---|---|
@@ -37,6 +40,11 @@ ASVS). Seus itens estão distribuídos nos temas acima.
 - **Como verificar:** <passos/comandos concretos>
 - **OK quando:** <critério objetivo>
 - **Referência:** <arquivo.md#seção, OWASP/ASVS id>
+- **Mapeamento:** nível L<n> · Top 10 Axx:2025 · ASVS Vx.y.z (L<n>) · WSTG-<CAT>-NN · APIn:2023
 ```
+
+A linha **Mapeamento** traz o menor nível ASVS entre os requisitos citados (para filtrar o checklist
+por nível) e as referências oficiais; partes sem correspondência são omitidas ou marcadas `—`. Ao
+criar ou mudar um item, atualize a linha e a tabela em [`mapeamentos.md`](mapeamentos.md).
 
 IDs são estáveis: ao remover um item, não reaproveite o número; ao adicionar, use o próximo livre.

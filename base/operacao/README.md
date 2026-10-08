@@ -9,5 +9,5 @@ operador único, processo de desenvolvimento seguro.
 | Arquivo | Conteúdo |
 |---|---|
 | [incidentes-e-pessoas.md](incidentes-e-pessoas.md) | runbook, contas satélites, pessoas, processo |
-| [referencias.md](referencias.md) | fontes oficiais |
-| [checklist.md](checklist.md) | itens `SEC-OPS-*` |
+| [referencias.md](referencias.md) | fontes oficiais e mapeamento Top 10 / ASVS / WSTG |
+| [checklist.md](checklist.md) | itens `SEC-OPS-*` (com nível ASVS e mapeamento) |

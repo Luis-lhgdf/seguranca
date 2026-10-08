@@ -15,8 +15,8 @@ Cadastro, recuperação e telefone só se esses fluxos existirem — senão, N/A
 | [cadastro-e-enumeracao.md](cadastro-e-enumeracao.md) | OAT-019, verificar antes de liberar função, e-mail sequestrado, enumeração |
 | [recuperacao-de-senha.md](recuperacao-de-senha.md) | fluxo de referência, PIN × link, palpites acumulados, canal × 2º fator |
 | [telefone-em-varias-contas.md](telefone-em-varias-contas.md) | troca de número, número reciclado, mesmo número em várias contas |
-| [referencias.md](referencias.md) | fontes oficiais |
-| [checklist.md](checklist.md) | itens `SEC-AUTH-*` |
+| [referencias.md](referencias.md) | fontes oficiais e mapeamento Top 10 / ASVS / WSTG |
+| [checklist.md](checklist.md) | itens `SEC-AUTH-*` (com nível ASVS e mapeamento) |
 
 Relacionados: [sessao](../sessao/README.md) · [captcha](../captcha/README.md) ·
 [mensageria](../mensageria/README.md) · [rate-limit](../rate-limit/README.md).

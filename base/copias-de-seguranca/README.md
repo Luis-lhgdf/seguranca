@@ -10,8 +10,8 @@ também [banco](../banco/acesso-e-privilegios.md#3-banco-gerenciado-na-nuvem-se-
 | Arquivo | Conteúdo |
 |---|---|
 | [estrategia.md](estrategia.md) | regras e decisões de referência |
-| [referencias.md](referencias.md) | fontes oficiais |
-| [checklist.md](checklist.md) | itens `SEC-BKP-*` |
+| [referencias.md](referencias.md) | fontes oficiais e mapeamento Top 10 / ASVS / WSTG |
+| [checklist.md](checklist.md) | itens `SEC-BKP-*` (com nível ASVS e mapeamento) |
 
 > Nota: a pasta não se chama `backups/` porque esse nome é bloqueado pelas regras de permissão
 > do ambiente do Claude Code nesta máquina.

@@ -8,6 +8,7 @@
 - **Como verificar:** grep da seção 1 de [consultas-e-transacoes.md](consultas-e-transacoes.md#1-sql-injection); em teste, `' OR 1=1--` em busca/login.
 - **OK quando:** só ORM/bind params; SQL textual apenas literal fixo.
 - **Referência:** [consultas-e-transacoes.md#1-sql-injection](consultas-e-transacoes.md#1-sql-injection) · ASVS V1.2.4.
+- **Mapeamento:** nível L1 · Top 10 A05:2025 · ASVS V1.2.4 (L1) · WSTG-INPV-05.
 
 ### SEC-BD-02 — Ordenação/coluna dinâmica por allowlist
 - **Aplica-se quando:** listagens com `order_by` vindo do cliente.
@@ -15,6 +16,7 @@
 - **Como verificar:** localizar `order_by` nos serviços; conferir dicionário-allowlist e `pattern` na direção.
 - **OK quando:** valor fora da lista cai no default.
 - **Referência:** [consultas-e-transacoes.md#1-sql-injection](consultas-e-transacoes.md#1-sql-injection).
+- **Mapeamento:** nível L1 · Top 10 A05:2025 · ASVS V1.2.4 (L1), V2.2.1 (L1) · WSTG-INPV-05.
 
 ### SEC-BD-03 — Operações de consumo atômicas
 - **Aplica-se quando:** há saldo, estoque, voucher, cupom, reembolso ou qualquer recurso de uso único.
@@ -22,6 +24,7 @@
 - **Como verificar:** ler o fluxo (`FOR UPDATE`, update condicional, índice único); em teste, 20 requisições paralelas (`xargs -P 20 curl ...`) → 1 sucesso.
 - **OK quando:** check+uso atômico e teste de concorrência existente.
 - **Referência:** [consultas-e-transacoes.md#2-concorrência-toctou-e-idempotência](consultas-e-transacoes.md#2-concorrência-toctou-e-idempotência) · ASVS V15.4.2.
+- **Mapeamento:** nível L2 · Top 10 A06:2025 · ASVS V15.4.2 (L3), V2.3.3 (L2), V2.3.4 (L2) · WSTG-BUSL-05.
 
 ### SEC-BD-04 — Dinheiro em tipo decimal
 - **Aplica-se quando:** há valor monetário.
@@ -29,6 +32,7 @@
 - **Como verificar:** `grep -rnE "Float|float\(|DOUBLE|REAL" $REPO/<models>` nos campos de preço/valor.
 - **OK quando:** `NUMERIC/DECIMAL` + `Decimal`; `float` só para formatação.
 - **Referência:** [consultas-e-transacoes.md#3-tipos-e-integridade](consultas-e-transacoes.md#3-tipos-e-integridade).
+- **Mapeamento:** nível L2 · Top 10 A06:2025 · ASVS V15.3.5 (L2).
 
 ### SEC-BD-05 — Unicidade garantida no banco
 - **Aplica-se quando:** há regra "um por pessoa" (e-mail, CPF, telefone verificado, chave de idempotência).
@@ -36,6 +40,7 @@
 - **Como verificar:** ler migrations/índices (`UNIQUE`, índice parcial).
 - **OK quando:** índice único para cada regra de unicidade.
 - **Referência:** [consultas-e-transacoes.md#3-tipos-e-integridade](consultas-e-transacoes.md#3-tipos-e-integridade).
+- **Mapeamento:** nível L3 · Top 10 A06:2025 · ASVS V15.4.2 (L3) · WSTG-BUSL-05.
 
 ### SEC-BD-06 — Banco e Redis inacessíveis pela internet
 - **Aplica-se quando:** há banco/Redis em VPS ou Docker.
@@ -43,6 +48,7 @@
 - **Como verificar:** `ssh $VPS 'sudo ss -tlnp | grep -E ":(3306|33060|5432|6379)"'`; ler `ports:` do compose; de fora, `nc -zvw3 <host> 3306`.
 - **OK quando:** só loopback/rede interna; conexão externa recusada.
 - **Referência:** [acesso-e-privilegios.md#1-rede](acesso-e-privilegios.md#1-rede).
+- **Mapeamento:** Top 10 A02:2025 · sem requisito ASVS direto · WSTG-CONF-01.
 
 ### SEC-BD-07 — Usuário da aplicação com privilégio mínimo
 - **Aplica-se quando:** há banco.
@@ -50,6 +56,7 @@
 - **Como verificar:** `SHOW GRANTS` / `\dp` (comando da seção 2) com autorização.
 - **OK quando:** app só DML no próprio schema; DDL num usuário de migração separado (ou risco aceito por escrito).
 - **Referência:** [acesso-e-privilegios.md#2-usuários-e-privilégios](acesso-e-privilegios.md#2-usuários-e-privilégios).
+- **Mapeamento:** nível L2 · Top 10 A02:2025 · ASVS V13.2.2 (L2).
 
 ### SEC-BD-08 — Instalação endurecida
 - **Aplica-se quando:** banco autogerenciado.
@@ -57,6 +64,7 @@
 - **Como verificar:** `ssh $VPS "sudo mysql -e \"SELECT user,host FROM mysql.user\""` (sem anônimo, root só local); `SHOW DATABASES` sem `test`.
 - **OK quando:** sem anônimos, sem `test`, root local.
 - **Referência:** [acesso-e-privilegios.md#2-usuários-e-privilégios](acesso-e-privilegios.md#2-usuários-e-privilégios).
+- **Mapeamento:** nível L2 · Top 10 A02:2025 · ASVS V13.2.3 (L2) · WSTG-CONF-02.
 
 ### SEC-BD-09 — Banco gerenciado com rede privada, TLS e backup
 - **Aplica-se quando:** usa banco gerenciado na nuvem.
@@ -64,6 +72,7 @@
 - **Como verificar:** console/CLI do provedor (acesso público, allowlist, TLS forçado, backup/PITR, logs).
 - **OK quando:** os quatro atendidos.
 - **Referência:** [acesso-e-privilegios.md#3-banco-gerenciado-na-nuvem-se-usar](acesso-e-privilegios.md#3-banco-gerenciado-na-nuvem-se-usar).
+- **Mapeamento:** nível L2 · Top 10 A02:2025, A04:2025 · ASVS V12.3.1 (L2) · WSTG-CONF-01.
 
 ### SEC-BD-10 — RLS em banco acessado pelo front
 - **Aplica-se quando:** o front fala direto com o banco (Supabase/Firebase/PostgREST).
@@ -71,6 +80,7 @@
 - **Como verificar:** listar tabelas e políticas (`select * from pg_policies`); checar RPCs expostas.
 - **OK quando:** RLS em todas as tabelas expostas; RPCs restritas.
 - **Referência:** [consultas-e-transacoes.md#4-supabase--banco-exposto-ao-cliente](consultas-e-transacoes.md#4-supabase--banco-exposto-ao-cliente).
+- **Mapeamento:** nível L1 · Top 10 A01:2025 · ASVS V8.2.2 (L1), V8.3.1 (L1) · WSTG-ATHZ-04 · API1:2023.
 
 ### SEC-BD-11 — Entrada com null byte não vira 500
 - **Aplica-se quando:** Postgres (e testar no MySQL).
@@ -78,3 +88,4 @@
 - **Como verificar:** em teste, enviar `\u0000` num campo de texto → 422.
 - **OK quando:** recusado na validação.
 - **Referência:** [consultas-e-transacoes.md#3-tipos-e-integridade](consultas-e-transacoes.md#3-tipos-e-integridade).
+- **Mapeamento:** nível L1 · Top 10 A10:2025, A05:2025 · ASVS V2.2.1 (L1), V16.5.3 (L2) · WSTG-ERRH-01.

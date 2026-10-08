@@ -11,5 +11,5 @@ OTP, agendamento, cupom, checkout, login). **N/A** sem formulário público que 
 | Arquivo | Conteúdo |
 |---|---|
 | [captcha-turnstile.md](captcha-turnstile.md) | decisão, configuração, falhas, testes |
-| [referencias.md](referencias.md) | fontes oficiais |
-| [checklist.md](checklist.md) | itens `SEC-CAP-*` |
+| [referencias.md](referencias.md) | fontes oficiais e mapeamento Top 10 / ASVS / WSTG |
+| [checklist.md](checklist.md) | itens `SEC-CAP-*` (com nível ASVS e mapeamento) |

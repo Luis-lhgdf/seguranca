@@ -9,3 +9,10 @@
 - Sentry — data scrubbing (PII) — https://docs.sentry.io/security-legal-pii/scrubbing/
 - systemd-journal-remote — https://www.freedesktop.org/software/systemd/man/latest/systemd-journal-remote.service.html
 - Healthchecks.io — https://healthchecks.io/docs/ · UptimeRobot — https://uptimerobot.com/
+
+## Mapeamento oficial
+
+Tabela item a item em [checklist/mapeamentos.md](../../checklist/mapeamentos.md#16-logs-auditoria-monitoramento-sec-log).
+
+- OWASP Top 10:2025 — [A09 Security Logging and Alerting Failures](https://owasp.org/Top10/2025/A09_2025-Security_Logging_and_Alerting_Failures/)
+- OWASP ASVS 5.0 — V16 Security Logging and Error Handling — https://github.com/OWASP/ASVS/tree/v5.0.0/5.0/en

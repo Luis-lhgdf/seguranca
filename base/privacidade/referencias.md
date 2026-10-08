@@ -11,3 +11,11 @@
 - Google — Consent Mode — https://developers.google.com/tag-platform/security/guides/consent
 - Cloudflare Turnstile — privacidade — https://www.cloudflare.com/turnstile-privacy-policy/
 - Cofen — Resolução 554/2017 (publicidade em enfermagem) — https://www.cofen.gov.br/
+
+## Mapeamento oficial
+
+Tabela item a item em [checklist/mapeamentos.md](../../checklist/mapeamentos.md#17-privacidade-lgpd-cookies-sec-lgpd).
+
+- OWASP Top 10:2025 — [A01 Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/) · [A04 Cryptographic Failures](https://owasp.org/Top10/2025/A04_2025-Cryptographic_Failures/)
+- OWASP ASVS 5.0 — V14 Data Protection · V16 Security Logging and Error Handling — https://github.com/OWASP/ASVS/tree/v5.0.0/5.0/en
+- OWASP WSTG v4.2 — [CLNT Lado do cliente](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/)

@@ -8,6 +8,7 @@
 - **Como verificar:** ler o serviço de upload (sniff dos primeiros bytes, lista permitida); em teste, subir `.php` e `.html` renomeados → recusados.
 - **OK quando:** extensão/`Content-Type` ignorados; só tipos da whitelist.
 - **Referência:** [validacao-de-arquivo.md#1-as-defesas](validacao-de-arquivo.md#1-as-defesas) · ASVS V5.2.2.
+- **Mapeamento:** nível L1 · Top 10 A06:2025 · ASVS V5.2.2 (L1) · WSTG-BUSL-08.
 
 ### SEC-UPL-02 — SVG recusado
 - **Aplica-se quando:** há upload de imagem.
@@ -15,6 +16,7 @@
 - **Como verificar:** em teste, subir SVG com `<script>` → recusado; conferir allowlist.
 - **OK quando:** SVG fora (ou sanitizado e servido de domínio separado, decisão escrita).
 - **Referência:** [validacao-de-arquivo.md#3-serviço-de-arquivo-e-xss](validacao-de-arquivo.md#3-serviço-de-arquivo-e-xss).
+- **Mapeamento:** nível L1 · Top 10 A05:2025 · ASVS V1.3.4 (L2), V5.2.2 (L1) · WSTG-BUSL-09.
 
 ### SEC-UPL-03 — Proteção contra bomba de descompressão
 - **Aplica-se quando:** o servidor decodifica imagem.
@@ -22,6 +24,7 @@
 - **Como verificar:** procurar checagem de dimensão antes do decode e `MAX_IMAGE_PIXELS`.
 - **OK quando:** teto de dimensão antes de decodificar (ou nenhum decode).
 - **Referência:** [validacao-de-arquivo.md#1-as-defesas](validacao-de-arquivo.md#1-as-defesas).
+- **Mapeamento:** nível L2 · Top 10 A06:2025 · ASVS V5.2.3 (L2) · WSTG-BUSL-09.
 
 ### SEC-UPL-04 — Nome gerado pelo servidor e sem path traversal
 - **Aplica-se quando:** há upload.
@@ -29,6 +32,7 @@
 - **Como verificar:** ler a geração do nome (UUID) e a checagem `commonpath`; em teste, nome `../../etc/passwd` → gravado como `<uuid>.ext` no diretório.
 - **OK quando:** nome enviado descartado; destino validado.
 - **Referência:** [validacao-de-arquivo.md#2-testes-que-provam](validacao-de-arquivo.md#2-testes-que-provam) · ASVS V5.3.2.
+- **Mapeamento:** nível L1 · Top 10 A01:2025 · ASVS V5.3.2 (L1), V5.4.1 (L2) · WSTG-ATHZ-01.
 
 ### SEC-UPL-05 — Limite de tamanho no app e na borda
 - **Aplica-se quando:** há upload.
@@ -36,6 +40,7 @@
 - **Como verificar:** teto no código; `ssh $VPS 'sudo nginx -T | grep -n client_max_body_size'`.
 - **OK quando:** os dois tetos existem e são coerentes.
 - **Referência:** [validacao-de-arquivo.md#1-as-defesas](validacao-de-arquivo.md#1-as-defesas).
+- **Mapeamento:** nível L1 · Top 10 A06:2025 · ASVS V5.2.1 (L1) · WSTG-BUSL-09 · API4:2023.
 
 ### SEC-UPL-06 — Metadados removidos (EXIF, GPS, miniatura, texto)
 - **Aplica-se quando:** há upload de imagem — **crítico** se for foto de pessoa.
@@ -43,6 +48,7 @@
 - **Como verificar:** baixar uma imagem publicada pela URL pública e rodar `exiftool -a -G1 <arquivo>`; em teste, subir foto com GPS e conferir o servido.
 - **OK quando:** nenhum GPS, autor, serial, texto ou miniatura nos arquivos servidos.
 - **Referência:** [metadados-de-imagem.md#3-como-verificar](metadados-de-imagem.md#3-como-verificar).
+- **Mapeamento:** nível L3 · Top 10 A01:2025 · ASVS V14.2.8 (L3).
 
 ### SEC-UPL-07 — Diretório de upload sem listagem e com `nosniff`
 - **Aplica-se quando:** arquivos servidos pelo servidor web.
@@ -50,6 +56,7 @@
 - **Como verificar:** `curl -s -o /dev/null -w '%{http_code}' $SITE/uploads/` → 403/404; `curl -sI $SITE/uploads/<arquivo> | grep -i nosniff`.
 - **OK quando:** sem listagem e com `nosniff`.
 - **Referência:** [validacao-de-arquivo.md#1-as-defesas](validacao-de-arquivo.md#1-as-defesas).
+- **Mapeamento:** nível L1 · Top 10 A02:2025 · ASVS V5.3.1 (L1), V13.4.3 (L2), V3.4.4 (L2) · WSTG-CONF-03.
 
 ### SEC-UPL-08 — Mídia privada fora do alcance público
 - **Aplica-se quando:** há arquivos privados (documentos, termos).
@@ -57,6 +64,7 @@
 - **Como verificar:** confirmar que o root privado não aparece em `nginx -T` nem em montagem de estáticos; tentar a URL direta → 404; rota autenticada com permissão própria e `Cache-Control: no-store`.
 - **OK quando:** só rota autenticada e auditada serve o privado.
 - **Referência:** [midia-publica-e-privada.md#1-dois-roots](midia-publica-e-privada.md#1-dois-roots).
+- **Mapeamento:** nível L1 · Top 10 A01:2025 · ASVS V8.2.2 (L1) · WSTG-ATHZ-02.
 
 ### SEC-UPL-09 — Acervo sensível não raspável sem controle
 - **Aplica-se quando:** há galeria/listagem pública de mídia sensível.
@@ -64,6 +72,7 @@
 - **Como verificar:** de fora, `curl` na listagem e na rota de mídia sem sessão e sem aceite; checar rate limit dos GET públicos; checar alerta de volume no log.
 - **OK quando:** gate com contrapartida no servidor + rate limit + alerta — ou desvio aceito por escrito pelo responsável.
 - **Referência:** [midia-publica-e-privada.md#3-galeria-sensível-e-raspagem](midia-publica-e-privada.md#3-galeria-sensível-e-raspagem).
+- **Mapeamento:** nível L2 · Top 10 A06:2025 · ASVS V2.4.1 (L2) · WSTG-BUSL-07 · API6:2023.
 
 ### SEC-UPL-10 — Cache de mídia sensível permite recolher
 - **Aplica-se quando:** mídia sensível pública.
@@ -71,6 +80,7 @@
 - **Como verificar:** `curl -sI $SITE/uploads/<arquivo sensível> | grep -i cache-control`.
 - **OK quando:** cache curto (ou decisão escrita) para mídia sensível.
 - **Referência:** [midia-publica-e-privada.md#2-arquivo-público-é-público-por-natureza](midia-publica-e-privada.md#2-arquivo-público-é-público-por-natureza).
+- **Mapeamento:** nível L2 · Top 10 A01:2025 · ASVS V14.2.2 (L2).
 
 ### SEC-UPL-11 — Crawlers fora das pastas de mídia
 - **Aplica-se quando:** mídia sensível pública.
@@ -78,3 +88,4 @@
 - **Como verificar:** `curl -s $SITE/robots.txt` — `Disallow: /uploads/` para `*` e crawlers de IA; sitemap sem slugs sensíveis.
 - **OK quando:** os dois atendidos (lembrando que robots não é controle de acesso).
 - **Referência:** [midia-publica-e-privada.md#3-galeria-sensível-e-raspagem](midia-publica-e-privada.md#3-galeria-sensível-e-raspagem).
+- **Mapeamento:** Top 10 A02:2025 · sem requisito ASVS direto · WSTG-INFO-03.

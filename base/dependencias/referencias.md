@@ -25,3 +25,12 @@
 - CycloneDX — https://cyclonedx.org/ · Syft — https://github.com/anchore/syft
 - OWASP ZAP — https://www.zaproxy.org/
 - OWASP ASVS 5.0 — V15.1.1, V15.1.2, V15.2.1 — https://github.com/OWASP/ASVS
+
+## Mapeamento oficial
+
+Tabela item a item em [checklist/mapeamentos.md](../../checklist/mapeamentos.md#1-dependências-e-versões-sec-dep).
+
+- OWASP Top 10:2025 — [A02 Security Misconfiguration](https://owasp.org/Top10/2025/A02_2025-Security_Misconfiguration/) · [A03 Software Supply Chain Failures](https://owasp.org/Top10/2025/A03_2025-Software_Supply_Chain_Failures/) · [A06 Insecure Design](https://owasp.org/Top10/2025/A06_2025-Insecure_Design/) · [A08 Software or Data Integrity Failures](https://owasp.org/Top10/2025/A08_2025-Software_or_Data_Integrity_Failures/)
+- OWASP ASVS 5.0 — V15 Secure Coding and Architecture — https://github.com/OWASP/ASVS/tree/v5.0.0/5.0/en
+- OWASP WSTG v4.2 — [INFO Coleta de informação](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/)
+- OWASP API Security Top 10:2023 — API9 Improper Inventory Management — https://owasp.org/API-Security/editions/2023/en/0x11-t10/

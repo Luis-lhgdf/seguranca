@@ -12,7 +12,7 @@ contato é só link `wa.me`/`mailto:` aberto pelo visitante (nada sai do servido
 |---|---|
 | [limites-e-toll-fraud.md](limites-e-toll-fraud.md) | risco, ordem da contagem, dimensões, regras de envio |
 | [custo-e-entregabilidade.md](custo-e-entregabilidade.md) | preços, o que registrar, alertas, SPF/DKIM/DMARC |
-| [referencias.md](referencias.md) | fontes oficiais |
-| [checklist.md](checklist.md) | itens `SEC-MSG-*` |
+| [referencias.md](referencias.md) | fontes oficiais e mapeamento Top 10 / ASVS / WSTG |
+| [checklist.md](checklist.md) | itens `SEC-MSG-*` (com nível ASVS e mapeamento) |
 
 Recuperação de senha e telefone: [autenticacao](../autenticacao/README.md).

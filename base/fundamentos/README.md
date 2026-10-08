@@ -16,3 +16,7 @@ checklists dos temas.
 | [classes-de-ataque.md](classes-de-ataque.md) | mecânica de ataques vistos em casos reais |
 | [asvs.md](asvs.md) | nível L2/L3, mapeamento, gaps recorrentes |
 | [referencias-gerais.md](referencias-gerais.md) | índice geral de fontes e ferramentas |
+
+Mapeamento item a item dos checklists para Top 10:2025, ASVS 5.0 e WSTG:
+[checklist/mapeamentos.md](../../checklist/mapeamentos.md). Estudo dos repositórios de referência
+(OWASP, WSTG, ASVS, dev-sec, Lynis e outros): [pesquisa/repositorios-de-referencia.md](../../pesquisa/repositorios-de-referencia.md).

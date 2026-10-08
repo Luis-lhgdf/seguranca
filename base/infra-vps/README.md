@@ -14,7 +14,7 @@ gerenciada/serverless (registrar quem é o responsável pela camada).
 | [firewall-e-fail2ban.md](firewall-e-fail2ban.md) | UFW + borda, jails, dotfiles, honeypot |
 | [hardening-do-sistema.md](hardening-do-sistema.md) | updates, sysctl, auditd, systemd |
 | [operacao-continua.md](operacao-continua.md) | healthcheck, smoke test, snapshots, validação externa, deploy |
-| [referencias.md](referencias.md) | fontes oficiais |
-| [checklist.md](checklist.md) | itens `SEC-VPS-*` |
+| [referencias.md](referencias.md) | fontes oficiais e mapeamento Top 10 / ASVS / WSTG |
+| [checklist.md](checklist.md) | itens `SEC-VPS-*` (com nível ASVS e mapeamento) |
 
 Nginx/TLS: [nginx-tls](../nginx-tls/README.md). Backups: [copias-de-seguranca](../copias-de-seguranca/README.md).

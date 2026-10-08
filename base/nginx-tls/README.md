@@ -12,7 +12,7 @@ hospedagem gerenciada, verificar só o lado externo (TLS, redirects, headers).
 |---|---|
 | [tls-e-certificados.md](tls-e-certificados.md) | protocolos, Certbot, redirects, como verificar |
 | [configuracao-nginx.md](configuracao-nginx.md) | esqueleto, armadilhas, `nginx -T` |
-| [referencias.md](referencias.md) | fontes oficiais |
-| [checklist.md](checklist.md) | itens `SEC-WEB-*` |
+| [referencias.md](referencias.md) | fontes oficiais e mapeamento Top 10 / ASVS / WSTG |
+| [checklist.md](checklist.md) | itens `SEC-WEB-*` (com nível ASVS e mapeamento) |
 
 Headers e CSP: [headers](../headers/README.md). Rate limit: [rate-limit](../rate-limit/README.md).
